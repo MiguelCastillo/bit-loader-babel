@@ -5,7 +5,7 @@
 
 ## simple bit-bundler setup
 
-```
+``` javascript
 var Bitbundler = require("bit-bundler");
 var babelPlugin = require("bit-loader-babel");
 
@@ -22,7 +22,7 @@ var bitbundler = new Bitbundler({
 
 > By default, bit-loader-babel will configure the `es2015` preset.
 
-```
+``` javascript
 var Bitbundler = require("bit-bundler");
 var babelPlugin = require("bit-loader-babel");
 
@@ -41,7 +41,7 @@ var bitbundler = new Bitbundler({
 
 ## configuring your own bable-core
 
-```
+``` javascript
 var Bitbundler = require("bit-bundler");
 var babelPlugin = require("bit-loader-babel");
 var babelCore = require("babel-core");
