@@ -12,7 +12,8 @@
   },
   "keywords": [
     "bit-loader",
-    "bit-bundler"
+    "bit-bundler",
+    "bit-loader-plugin"
   ],
   "author": "Miguel Castillo <manchagnu@gmail.com>",
   "license": "MIT",
