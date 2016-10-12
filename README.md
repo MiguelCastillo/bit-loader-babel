@@ -39,7 +39,7 @@ var bitbundler = new Bitbundler({
 })
 ```
 
-## configuring your own bable-core
+## configuring your own babel-core
 
 ``` javascript
 var Bitbundler = require("bit-bundler");
