@@ -24,8 +24,7 @@
   "dependencies": {
     "babel-core": "^6.14.0",
     "babel-preset-es2015": "^6.14.0",
-    "belty": "^4.0.3",
-    "bit-plugin-builder": "^1.1.1"
+    "belty": "^4.0.3"
   },
   "devDependencies": {
     "eslint": "^3.4.0"

@@ -1,4 +1,3 @@
-var PluginBuilder = require("bit-plugin-builder");
 var babelCore = require("babel-core");
 var utils = require("belty");
 
@@ -9,7 +8,7 @@ var defaults = {
   }
 };
 
-function factory(options) {
+function buildPlugin(options, builder) {
   var settings = options || {};
 
   var babelOptions = utils.extend({
@@ -24,13 +23,16 @@ function factory(options) {
     };
   }
 
-  return PluginBuilder
-    .create(defaults)
+  return builder
+    .configure(defaults)
     .configure({
       transform: transform
     })
-    .configure(settings)
-    .build();
+    .configure(settings);
 }
 
-module.exports = factory;
+module.exports = function factory(options) {
+  return function(builder) {
+    return buildPlugin(options, builder);
+  };
+};
