@@ -16,7 +16,8 @@ function buildPlugin(options, builder) {
   }, settings.options);
 
   function transform(moduleMeta) {
-    var transpiled = (settings.core || babelCore).transform(moduleMeta.source, babelOptions);
+    var settings = utils.extend({ filename: moduleMeta.path }, babelOptions);
+    var transpiled = (settings.core || babelCore).transform(moduleMeta.source, settings);
 
     return {
       source: transpiled.code
