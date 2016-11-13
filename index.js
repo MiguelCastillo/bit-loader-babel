@@ -10,14 +10,12 @@ var defaults = {
 
 function buildPlugin(options, builder) {
   var settings = options || {};
-
-  var babelOptions = utils.extend({
-    presets: ["es2015"]
-  }, settings.options);
+  var babel = settings.core || babelCore;
+  var babelOptions = utils.extend({ presets: ["es2015"] }, settings.options);
 
   function transform(moduleMeta) {
-    var settings = utils.extend({ filename: moduleMeta.path }, babelOptions);
-    var transpiled = (settings.core || babelCore).transform(moduleMeta.source, settings);
+    var babelSettings = utils.extend({ filename: moduleMeta.path }, babelOptions);
+    var transpiled = babel.transform(moduleMeta.source, babelSettings);
 
     return {
       source: transpiled.code
@@ -26,9 +24,7 @@ function buildPlugin(options, builder) {
 
   return builder
     .configure(defaults)
-    .configure({
-      transform: transform
-    })
+    .configure({ transform: transform })
     .configure(settings);
 }
 
