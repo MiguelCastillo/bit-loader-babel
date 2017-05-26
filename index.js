@@ -4,7 +4,7 @@ var utils = require("belty");
 var defaults = {
   extensions: ["js", "jsx"],
   ignores: {
-    path: /\/node_modules\//
+    path: [/\/bower_components\//, /\/node_modules\//]
   }
 };
 
