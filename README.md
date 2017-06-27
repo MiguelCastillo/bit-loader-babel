@@ -1,61 +1,33 @@
 # bit-loader-babel
-[babel](https://babeljs.io/) plugin for bit loader. This allows you to configure babel and also specify a custom babel-core module.
+[babel](https://babeljs.io/) plugin for bit loader.
 
 # Examples
 
-## simple bit-bundler setup
+## simple bit-bundler setup. This will pick up you .babelrc config files.
 
 ``` javascript
 var Bitbundler = require("bit-bundler");
-var babelPlugin = require("bit-loader-babel");
 
 var bitbundler = new Bitbundler({
-  loader: {
-    plugins: [
-      babelPlugin()
-    ]
-  }
+  loader: [
+    "bit-loader-babel"
+  ]
 })
 ```
 
-## configuring babel preset
+## configuring a different babel core
 
-> By default, bit-loader-babel will configure the `es2015` preset.
-
-``` javascript
-var Bitbundler = require("bit-bundler");
-var babelPlugin = require("bit-loader-babel");
-
-var bitbundler = new Bitbundler({
-  loader: {
-    plugins: [
-      babelPlugin({
-        options: {
-          presets: ["es2015", "react"]
-        }
-      })
-    ]
-  }
-})
-```
-
-## configuring your own babel-core
+bit-loader-babel uses the babel-core module to transpile your code, and it ships with one by default. You can override the babel-core module that bit-loader-babel uses if you need newer/older/specific versions of babel.
 
 ``` javascript
 var Bitbundler = require("bit-bundler");
-var babelPlugin = require("bit-loader-babel");
 var babelCore = require("babel-core");
 
 var bitbundler = new Bitbundler({
-  loader: {
-    plugins: [
-      babelPlugin({
-        core: babelCore,
-        options: {
-          presets: ["es2015", "react"]
-        }
-      })
-    ]
+  loader: [
+    ["bit-loader-babel", {
+      core: babelCore,
+    }]
   }
 })
 ```
