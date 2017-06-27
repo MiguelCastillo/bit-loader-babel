@@ -11,7 +11,7 @@ var defaults = {
 function buildPlugin(options, builder) {
   var settings = options || {};
   var babel = settings.core || babelCore;
-  var babelOptions = utils.extend({ presets: ["es2015"] }, settings.options);
+  var babelOptions = settings.options || {};
 
   function transform(moduleMeta) {
     var babelSettings = utils.extend({ filename: moduleMeta.path }, babelOptions);
