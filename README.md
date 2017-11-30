@@ -1,6 +1,7 @@
 # bit-loader-babel
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/MiguelCastillo/bit-loader-babel.svg)](https://greenkeeper.io/)
+
 [babel](https://babeljs.io/) plugin for bit loader.
 
 # Examples
