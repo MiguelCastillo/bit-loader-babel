@@ -9,11 +9,11 @@
 ## simple bit-bundler setup. This will pick up you .babelrc config files.
 
 ``` javascript
-var Bitbundler = require("bit-bundler");
+var Bitbundler = require("@bit/bundler");
 
 var bitbundler = new Bitbundler({
   loader: [
-    "bit-loader-babel"
+    "@bit/loader-babel"
   ]
 })
 ```
@@ -23,12 +23,12 @@ var bitbundler = new Bitbundler({
 bit-loader-babel uses the babel-core module to transpile your code, and it ships with one by default. You can override the babel-core module that bit-loader-babel uses if you need newer/older/specific versions of babel.
 
 ``` javascript
-var Bitbundler = require("bit-bundler");
+var Bitbundler = require("@bit/bundler");
 var babelCore = require("babel-core");
 
 var bitbundler = new Bitbundler({
   loader: [
-    ["bit-loader-babel", {
+    ["@bit/loader-babel", {
       core: babelCore,
     }]
   }
