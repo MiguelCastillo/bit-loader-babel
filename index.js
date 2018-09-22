@@ -1,4 +1,4 @@
-var babelCore = require("babel-core");
+var babelCore = require("@babel/core");
 var utils = require("belty");
 
 var defaults = {
