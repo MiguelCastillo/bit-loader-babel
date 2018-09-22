@@ -24,7 +24,7 @@ bit-loader-babel uses the babel-core module to transpile your code, and it ships
 
 ``` javascript
 var Bitbundler = require("@bit/bundler");
-var babelCore = require("babel-core");
+var babelCore = require("@babel/core");
 
 var bitbundler = new Bitbundler({
   loader: [
@@ -34,6 +34,10 @@ var bitbundler = new Bitbundler({
   }
 })
 ```
+
+## Babel version
+
+If you are looking to use babel 6 and earlier, please checkout @bit/loader-babel@3. If you are looking for babal 7 support, you can use latest.
 
 # License
 
